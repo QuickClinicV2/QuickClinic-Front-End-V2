@@ -20,7 +20,7 @@ export default function Error({
         <h2 className="text-2xl font-bold">Something went wrong!</h2>
         <p className="text-sm font-medium">{error.message}</p>
         <button
-          className="bg-accent rounded-md px-4 py-2 text-sm font-medium text-white"
+          className="rounded-md bg-accent px-4 py-2 text-sm font-medium text-white"
           onClick={() => reset()}
         >
           Try again
