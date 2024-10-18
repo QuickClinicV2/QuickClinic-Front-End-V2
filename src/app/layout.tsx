@@ -2,6 +2,9 @@ import './globals.css'
 
 import type { Metadata } from 'next'
 
+import { Sidebar } from '@/components/sidebar'
+import { cn } from '@/lib/utils'
+
 import { Providers } from './providers'
 
 export const metadata: Metadata = {
@@ -16,7 +19,15 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body className="antialiased">
-        <Providers>{children}</Providers>
+        <Providers>
+          <div className={cn('min-h-screen', 'lg:grid lg:grid-cols-app')}>
+            <Sidebar />
+
+            <main className={cn('p-4', 'lg:col-start-2 lg:py-6')}>
+              {children}
+            </main>
+          </div>
+        </Providers>
       </body>
     </html>
   )
